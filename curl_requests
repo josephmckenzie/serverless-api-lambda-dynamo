@@ -1,0 +1,29 @@
+Creating a record in a dynamo db using our api which will fire off the correct lambda to create a new record
+Note the only thing you can add to is the new "text" a boolean for checked defaults to false for now
+
+curl -X POST https://bsi7688wf2.execute-api.us-east-1.amazonaws.com/dev/todos -d '{"text":"Joe is a rockstar yeaH!"}'
+=================================================================================================================
+How to get a complete list of the records in our dynamo db
+
+curl -X GET https://bsi7688wf2.execute-api.us-east-1.amazonaws.com/dev/todos
+
+=================================================================================================================
+
+How to pull just the record you want by "id"
+
+curl -X GET https://bsi7688wf2.execute-api.us-east-1.amazonaws.com/dev/todos/2f9a9c10-c5df-11e7-9df9-7770bbe6cb8e
+
+====================================================================================================================
+
+How to send an update request to the api which will then fire the correct lambda to do what we want
+the updateable fields so far are "text" and "checked" cheked needs to be a boolean  
+
+curl -X PUT  https://bsi7688wf2.execute-api.us-east-1.amazonaws.com/dev/todos/924d4790-c5da-11e7-9df9-7770bbe6cb8e -d '{"text":"Hi numeber 2.....haha number 2 ","checked": true}'
+
+===================================================================================================================
+
+How to delete a record from the dynamo db 
+#just add the id of the record you waant to delete at the ednd of our api link (after /todos)
+
+curl -X DELETE https://bsi7688wf2.execute-api.us-east-1.amazonaws.com/dev/todos/2f9a9c10-c5df-11e7-9df9-7770bbe6cb8e
+
