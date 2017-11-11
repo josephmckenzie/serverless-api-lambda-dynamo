@@ -6,7 +6,7 @@ function getData(){
         host: 'bsi7688wf2.execute-api.us-east-1.amazonaws.com',
         path: '/dev/todos',
 		    port: 443
-  };
+	};
 
 callback = function(response) {
 
