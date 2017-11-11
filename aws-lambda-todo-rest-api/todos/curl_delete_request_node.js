@@ -1,11 +1,12 @@
-function getData(){
+function getData(id){
   var https = require('https');
   var results = '';
 
   var options = {
         host: 'bsi7688wf2.execute-api.us-east-1.amazonaws.com',
-        path: '/dev/todos',
-		    port: 443
+        path: '/dev/todos/' + id,
+		    port: 443,
+		    method: "DELETE"
   };
 
 callback = function(response) {
@@ -16,13 +17,13 @@ callback = function(response) {
   response.on('end', function () {
 //    console.log(str,"str");
 var str = JSON.parse(results);
-console.log(str.Items[0]);
+
+console.log(str);
 	
 	});
 }
 var req = https.request(options, callback).end();
 	}
 
-getData();
-
+getData('1e55ded0-c6af-11e7-b942-4fc6ed66ad84');
 
